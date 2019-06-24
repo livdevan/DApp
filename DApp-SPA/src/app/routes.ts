@@ -14,7 +14,11 @@ export const appRoutes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'members', component: MemberListComponent },
+      {
+        path: 'members',
+        component: MemberListComponent,
+        resolve: { users: MembersListResolver }
+      },
       {
         path: 'members/:id',
         component: MemberDetailComponent,
@@ -23,8 +27,7 @@ export const appRoutes: Routes = [
       { path: 'messages', component: MessagesComponent },
       {
         path: 'lists',
-        component: ListsComponent,
-        resolve: { users: MembersListResolver }
+        component: ListsComponent
       }
     ]
   },
