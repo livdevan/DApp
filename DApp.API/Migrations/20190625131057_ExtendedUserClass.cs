@@ -40,7 +40,7 @@ namespace DApp.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Introducton",
+                name: "Introduction",
                 table: "Users",
                 nullable: true);
 
@@ -119,7 +119,7 @@ namespace DApp.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Introducton",
+                name: "Introduction",
                 table: "Users");
 
             migrationBuilder.DropColumn(

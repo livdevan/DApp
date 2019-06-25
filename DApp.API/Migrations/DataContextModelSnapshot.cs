@@ -67,7 +67,7 @@ namespace DApp.API.Migrations
 
                     b.Property<string>("Interests");
 
-                    b.Property<string>("Introducton");
+                    b.Property<string>("Introduction");
 
                     b.Property<string>("KnownAs");
 

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190619144358_ExtendedUserClass")]
+    [Migration("20190625131057_ExtendedUserClass")]
     partial class ExtendedUserClass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,7 +69,7 @@ namespace DApp.API.Migrations
 
                     b.Property<string>("Interests");
 
-                    b.Property<string>("Introducton");
+                    b.Property<string>("Introduction");
 
                     b.Property<string>("KnownAs");
 
