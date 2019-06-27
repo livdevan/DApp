@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DApp.API.Data;
 using DApp.API.Dtos;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,11 @@ namespace DApp.API.Controllers
     {
         private readonly IAuthRepository repo;
         private readonly IConfiguration configuration;
+        private readonly IMapper mapper;
 
-        public AuthController(IAuthRepository repo, IConfiguration configuration)
+        public AuthController(IAuthRepository repo, IConfiguration configuration, IMapper mapper)
         {
+            this.mapper = mapper;
             this.repo = repo;
             this.configuration = configuration;
         }
@@ -74,9 +77,13 @@ namespace DApp.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
+            var user = this.mapper.Map<UserForListDto>(userFromRepo);
+
+
             return Ok(new
             {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                user
             });
         }
     }

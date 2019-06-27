@@ -2,3 +2,9 @@
 .dropdown-item {
   cursor: pointer;
 }
+
+img {
+  max-height: 50px;
+  border: 1.5px solid white;
+  display: inline;
+}
