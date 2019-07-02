@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DApp.API.Models;
 
 namespace DApp.API
 {
@@ -24,5 +25,7 @@ namespace DApp.API
         public string City { get; set; }
         public string Country { get; set; }
         public ICollection<Photo> Photos { get; set; }
+        public ICollection<Like> Likers { get; set; }
+        public ICollection<Like> Likees { get; set; }
     }
 }

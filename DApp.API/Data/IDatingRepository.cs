@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DApp.API.Helpers;
+using DApp.API.Models;
 
 namespace DApp.API.Data
 {
@@ -13,6 +14,7 @@ namespace DApp.API.Data
         Task<User> GetUser(int id);
         Task<Photo> GetPhoto(int id);
         Task<Photo> GetMainPhotoForUser(int userId);
+        Task<Like> GetLike(int userId, int recipientId);
 
     }
 }
